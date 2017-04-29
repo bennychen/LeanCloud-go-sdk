@@ -5,9 +5,10 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"time"
+
 	"github.com/johnzeng/leancloud-go-sdk/query"
 	"github.com/parnurzeal/gorequest"
-	"time"
 )
 
 type Agent struct {
@@ -88,6 +89,10 @@ func (this *Agent) UseSignature() *Agent {
 func (this *Agent) UseMasterKey() *Agent {
 	this.useMasterKey = true
 	return this
+}
+
+func (this *Agent) SetDebug() {
+	this.superAgent.SetDebug(true)
 }
 
 func (this *Agent) Do() error {

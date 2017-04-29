@@ -1,8 +1,6 @@
 package lean
 
-import (
-	"github.com/parnurzeal/gorequest"
-)
+import "github.com/parnurzeal/gorequest"
 
 type Collection struct {
 	client      *leanClient
@@ -24,6 +22,7 @@ func (this Collection) Create(obj interface{}) *Agent {
 	classesUrl := UrlBase + this.classSubfix
 	superAgent := request.Post(classesUrl).
 		Send(obj)
+	//superAgent.SetDebug(true)
 	return &Agent{
 		superAgent: superAgent,
 		client:     this.client,

@@ -36,8 +36,8 @@ type LeanTime struct {
 //  "objectId": "55a39634e4b0ed48f0c1845c"
 //}
 type LeanPointer struct {
-	class    string
-	objectId string
+	ClassName string
+	ObjectID  string
 }
 
 //relation can only modify by AddRelation or RemoveRelation.
@@ -51,8 +51,8 @@ func (t *LeanPointer) typeName() string {
 }
 
 func (t *LeanPointer) fillByMap(m map[string]string) error {
-	t.class = m["className"]
-	t.objectId = m["objectId"]
+	t.ClassName = m["className"]
+	t.ObjectID = m["objectId"]
 	return nil
 }
 
@@ -118,7 +118,7 @@ func (t LeanPointer) MarshalJSON() ([]byte, error) {
 		"__type": "Pointer",
 		"className": "%s",
 		"objectId":"%s"
-	}`, t.class, t.objectId)
+	}`, t.ClassName, t.ObjectID)
 	return []byte(str), nil
 }
 

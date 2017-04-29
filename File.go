@@ -2,10 +2,11 @@ package lean
 
 import (
 	"encoding/json"
-	"github.com/parnurzeal/gorequest"
 	"io/ioutil"
 	"net/http"
 	"os"
+
+	"github.com/parnurzeal/gorequest"
 )
 
 //be attention that EmailVerified and MobilePhoneVerified can be nil
@@ -59,6 +60,7 @@ func (this *leanClient) UploadFile(fileName, contentType string, file *os.File) 
 	}
 	httpRequest.Header.Add("X-LC-Key", this.appKey)
 	httpRequest.Header.Add("X-LC-Id", this.appId)
+	httpRequest.Header.Add("Content-Type", contentType)
 	client := http.Client{}
 	httpResponse, err := client.Do(httpRequest)
 
