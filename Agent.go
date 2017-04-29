@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/johnzeng/leancloud-go-sdk/query"
+	"github.com/bennychen/leancloud/query"
 	"github.com/parnurzeal/gorequest"
 )
 

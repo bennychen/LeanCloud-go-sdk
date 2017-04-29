@@ -5,8 +5,8 @@ Leancloud go语言SDK，根据Leancloud公布的Restful API封装，并且使用
 使用：
 
 ```shell
-go get github.com/johnzeng/leancloud-go-sdk
-cd $GOPATH/src/github.com/johnzeng/leancloud-go-sdk
+go get github.com/bennychen/leancloud
+cd $GOPATH/src/github.com/bennychen/leancloud
 godep restore
 go install
 ```
