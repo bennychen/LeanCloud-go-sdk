@@ -73,6 +73,10 @@ func Exists(key string, value bool) *Query {
 	return compare(key, "$exists", value)
 }
 
+func Regex(key string, value interface{}) *Query {
+	return compare(key, "$regex", value)
+}
+
 //accept only LeanPointer
 func RelatedTo(key string, value interface{}) *Query {
 	return &Query{

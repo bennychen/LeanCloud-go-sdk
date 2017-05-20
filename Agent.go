@@ -35,6 +35,11 @@ func (this *Agent) UseSessionToken(token string) *Agent {
 	return this
 }
 
+func (this *Agent) Include(className string) *Agent {
+	this.superAgent.QueryData.Add("include", className)
+	return this
+}
+
 func (this *QueryAgent) WithKeys(key string) *QueryAgent {
 	this.superAgent.QueryData.Add("keys", key)
 	return this
